@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct Choosechildren: View {
-    
-    let newrecurringData = ["Jimmmy jones","Jimmmy jones","Jimmmy jones"]
-    
+        
     @State  var selectedOption: Int = 1
     @Binding var isOPenchild : Bool
     
-    @ObservedObject var childrenlistViewModel = ChildrenlistViewModel()
-    
+    @ObservedObject var childlistViewModel = ChildrenlistViewModel()
     
     var body: some View {
         
@@ -26,37 +23,37 @@ struct Choosechildren: View {
                     Text("Who's going?").font(.headline).padding(EdgeInsets(top: 20, leading: 20, bottom: 10, trailing: 0))
                     Spacer()
                 }
-                
+
                 VStack{
                     HStack {
                         List{
-                            ForEach(newrecurringData.indices, id: \.self) { index in
-                                RadioButtonView(index: index, selectedIndex: $selectedOption, name: newrecurringData[index], isOPenchild: $isOPenchild)
+                            ForEach(childlistViewModel.childata.indices, id: \.self) { index in
+                                RadioButtonView(index: index, selectedIndex: $selectedOption, name: childlistViewModel.childata[index].fullName, isOPenchild: $isOPenchild)
                                     .listRowSeparator(.hidden)
                             }
                         }.listStyle(.plain)
                     }
-                }.frame(height: CGFloat(newrecurringData.count) * 45 + 10 )
-            }.border(Color.black, width: 1.5).padding()
-                .onAppear(){
-                    //childrenlistViewModel.getchildrenList()
+                }.frame(height: CGFloat(childlistViewModel.childata.count) * 45 + 10)
+                
+            }.border(Color.black, width: 1.5)
+                .onAppear() {
+                    childlistViewModel.getchildrenList()
                 }
-            
+
         } else {
-            
+
             //Choose a rooom
             HStack {
                 Text("Who").padding()
                 Spacer()
-                // Text("Jimmy jones").bold().padding()
-                Button("Jimmy jones") {
+                 Button(childlistViewModel.childata[selectedOption].fullName) {
                     isOPenchild = true
                 }
                 .fontWeight(.bold).foregroundStyle(.black)
                 .cornerRadius(0)
                 .padding()
                 
-            }.border(Color.black, width: 1.5).padding()
+            }.border(Color.black, width: 1.5)
         }
     }
 }

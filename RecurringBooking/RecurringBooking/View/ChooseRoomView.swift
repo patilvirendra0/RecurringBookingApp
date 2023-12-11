@@ -11,12 +11,13 @@ import SwiftUI
 
 struct ChooseRoomView: View {
     
-    
     var chooseroomdata = ["Before School care - 5am - 8:30am","holiday Program - 9am - 3pm","Before School care - 5am - 8:30am","holiday Program - 9am - 3pm","Before School care - 5am - 8:30am"]
-    
-    @State  var selectedOption: Int = 1
-    
+
+    @State  var selectedchooseroom : Int = 1
+
     @Binding var isOPenchooseroom : Bool
+
+    @ObservedObject var roomlistViewModel = RoomlistViewModel()
     
     var body: some View {
         
@@ -34,13 +35,16 @@ struct ChooseRoomView: View {
                             
                             ForEach(chooseroomdata.indices, id: \.self) { index in
                                 
-                                RadioButtonView(index: index, selectedIndex: $selectedOption, name: chooseroomdata[index], isOPenchild: $isOPenchooseroom)
+                                ChooseroomRadiobutton(index: index, selectedIndex: $selectedchooseroom, name: chooseroomdata[index], isOPenchild: $isOPenchooseroom)
                                     .listRowSeparator(.hidden)
                             }
                         }.listStyle(.plain)
                     }
                 }.frame(height: CGFloat(chooseroomdata.count) * 45 + 10 )
-            }.border(Color.black, width: 1.5).padding()
+            }.border(Color.black, width: 1.5).onAppear() {
+                
+                  //roomlistViewModel.getroomListData()
+            }
             
         } else {
             
@@ -48,7 +52,6 @@ struct ChooseRoomView: View {
             HStack {
                 Text("Where").padding()
                 Spacer()
-                // Text("Jimmy jones").bold().padding()
                 Button("Before School care - 5am - 8:30am") {
                     isOPenchooseroom = true
                 }
@@ -56,7 +59,33 @@ struct ChooseRoomView: View {
                 .cornerRadius(0)
                 .padding()
                 
-            }.border(Color.black, width: 1.5).padding()
+            }.border(Color.black, width: 1.5)
+        }
+    }
+}
+
+struct ChooseroomRadiobutton: View {
+    
+    var index: Int
+    @Binding var selectedIndex: Int
+    @State var name : String
+    @Binding var isOPenchild : Bool
+
+    @ObservedObject var roomlistViewModel = RoomlistViewModel()
+        
+    var body: some View {
+        
+        Button(action: {
+            selectedIndex = index
+            isOPenchild = false
+            roomlistViewModel.getroomListData()
+
+        }) {
+            HStack {
+                Image(systemName: selectedIndex == index ? "largecircle.fill.circle" : "circle")
+                    .foregroundColor(.black)
+                Text("\(name)").fontWeight(.regular).foregroundStyle(.black)
+            }
         }
     }
 }

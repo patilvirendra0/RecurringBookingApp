@@ -12,6 +12,8 @@ class ChildrenlistViewModel : ObservableObject {
     
     private let childrenListResource: ChildrenListResource = ChildrenListResource()
     
+    @Published var childata: [Child] = []
+    
     //Call the api
     func getchildrenList() {
         
@@ -19,7 +21,9 @@ class ChildrenlistViewModel : ObservableObject {
 
             DispatchQueue.main.async {
                  if(response != nil){
-                    print("Get children List --->\(response.debugDescription)")
+                     
+                     self.childata = (response?.data.children)!
+                    //print("Get children List --->\(response.debugDescription)")
                 }
             }
         }

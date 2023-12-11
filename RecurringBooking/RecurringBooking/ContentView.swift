@@ -8,17 +8,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State  var selectedOption: Int = 1
     
     @State  var isOPenchild : Bool = true
     @State var isOPenchooseroom : Bool = false
+    
     @State private var startDate = Date.now
     
     @State private var endDate = Date.now
     
     @State private var buttonDisabled = false
-    
-    @State private var ChildrenListData : [ChildrenList] = []
     
     let choosedays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     
@@ -56,9 +54,8 @@ struct ContentView: View {
                         
                         //set the Choose room Data
                         Choosechildren(isOPenchild: $isOPenchild)
-                        
                         //set the Choose room Data
-                        ChooseRoomView(isOPenchooseroom: $isOPenchooseroom)
+                        ChooseRoomView(isOPenchooseroom: $isOPenchooseroom).padding(.top,10)
                         
                         VStack (spacing: 0) {
                             
@@ -73,8 +70,8 @@ struct ContentView: View {
                                     
                                     HStack {
                                         DatePicker(selection: $startDate,in: Date.now..., displayedComponents: .date) {
-                                            Label("",systemImage: "calendar").padding(.leading)
-                                        }
+                                            Label("",systemImage: "calendar")
+                                        }.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
                                     }.border(Color.gray, width: 1)
                                 }
                                 
@@ -88,15 +85,16 @@ struct ContentView: View {
                                     HStack {
                                         
                                         DatePicker(selection: $endDate,in: startDate..., displayedComponents: .date) {
-                                            Label("",systemImage: "calendar") .padding(.leading)
-                                        }
+                                            Label("",systemImage: "calendar")
+                                        }.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
                                         
                                     }.border(Color.gray, width: 1)
                                 }
-                                
+
                             }.frame(minWidth: 0, maxWidth: .infinity).background(Color.clear)
                             
-                        }.padding()
+                        }.padding(.top,15)
+                        
                         
                         
                         VStack{
@@ -146,7 +144,7 @@ struct ContentView: View {
                                     }
                                 }
                             }.border(Color.gray)
-                        }.padding()
+                        }.padding(.top ,10)
                     }
                     
                     //Review Booking Button
@@ -157,7 +155,7 @@ struct ContentView: View {
                     }) {
                         
                         NavigationLink(destination: ReviewbookingView()) {
-                            
+
                             HStack {
                                 Text("Review Booking")
                                     .fontWeight(.regular)
@@ -171,7 +169,7 @@ struct ContentView: View {
                         }.padding().disabled(buttonDisabled)
                         
                     }
-                }
+                }.padding()
             }
         }
     }

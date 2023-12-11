@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ChildrenList
-struct ChildrenList: Codable {
+struct ChildrenlistModel: Codable {
     let data: DataClass
     let id, displayName: String
     let version: Int
