@@ -11,6 +11,14 @@
 		371FD3612B22FFE100A073C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3602B22FFE100A073C1 /* ContentView.swift */; };
 		371FD3632B22FFE300A073C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371FD3622B22FFE300A073C1 /* Assets.xcassets */; };
 		371FD3662B22FFE300A073C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371FD3652B22FFE300A073C1 /* Preview Assets.xcassets */; };
+		371FD3702B242D0F00A073C1 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */; };
+		371FD3722B24690200A073C1 /* childrenlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3712B24690200A073C1 /* childrenlist.swift */; };
+		371FD3742B247D1000A073C1 /* ChooseRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3732B247D1000A073C1 /* ChooseRoomView.swift */; };
+		371FD3762B2481B200A073C1 /* Choosechildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3752B2481B200A073C1 /* Choosechildren.swift */; };
+		371FD37A2B2631EA00A073C1 /* ReviewbookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3792B2631EA00A073C1 /* ReviewbookingView.swift */; };
+		371FD3802B26B7D100A073C1 /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD37F2B26B7D100A073C1 /* HttpUtility.swift */; };
+		371FD3832B26B83F00A073C1 /* ChildrenlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3822B26B83F00A073C1 /* ChildrenlistViewModel.swift */; };
+		371FD3852B26BCE800A073C1 /* ChildrenListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3842B26BCE800A073C1 /* ChildrenListResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		371FD3602B22FFE100A073C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		371FD3622B22FFE300A073C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371FD3652B22FFE300A073C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		371FD3712B24690200A073C1 /* childrenlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = childrenlist.swift; sourceTree = "<group>"; };
+		371FD3732B247D1000A073C1 /* ChooseRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoomView.swift; sourceTree = "<group>"; };
+		371FD3752B2481B200A073C1 /* Choosechildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choosechildren.swift; sourceTree = "<group>"; };
+		371FD3792B2631EA00A073C1 /* ReviewbookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewbookingView.swift; sourceTree = "<group>"; };
+		371FD37F2B26B7D100A073C1 /* HttpUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
+		371FD3822B26B83F00A073C1 /* ChildrenlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenlistViewModel.swift; sourceTree = "<group>"; };
+		371FD3842B26BCE800A073C1 /* ChildrenListResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenListResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +67,13 @@
 		371FD35D2B22FFE100A073C1 /* RecurringBooking */ = {
 			isa = PBXGroup;
 			children = (
-				371FD35E2B22FFE100A073C1 /* RecurringBookingApp.swift */,
+				371FD3862B26BCF300A073C1 /* Resource */,
+				371FD3812B26B81900A073C1 /* Viewmodel */,
+				371FD37B2B26B51600A073C1 /* APIManager */,
+				371FD36E2B242C9E00A073C1 /* View */,
+				371FD36C2B24244D00A073C1 /* Model */,
 				371FD3602B22FFE100A073C1 /* ContentView.swift */,
+				371FD35E2B22FFE100A073C1 /* RecurringBookingApp.swift */,
 				371FD3622B22FFE300A073C1 /* Assets.xcassets */,
 				371FD3642B22FFE300A073C1 /* Preview Content */,
 			);
@@ -65,6 +86,49 @@
 				371FD3652B22FFE300A073C1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		371FD36C2B24244D00A073C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				371FD3712B24690200A073C1 /* childrenlist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		371FD36E2B242C9E00A073C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */,
+				371FD3732B247D1000A073C1 /* ChooseRoomView.swift */,
+				371FD3752B2481B200A073C1 /* Choosechildren.swift */,
+				371FD3792B2631EA00A073C1 /* ReviewbookingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		371FD37B2B26B51600A073C1 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				371FD37F2B26B7D100A073C1 /* HttpUtility.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		371FD3812B26B81900A073C1 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				371FD3822B26B83F00A073C1 /* ChildrenlistViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		371FD3862B26BCF300A073C1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				371FD3842B26BCE800A073C1 /* ChildrenListResource.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371FD3802B26B7D100A073C1 /* HttpUtility.swift in Sources */,
+				371FD37A2B2631EA00A073C1 /* ReviewbookingView.swift in Sources */,
+				371FD3742B247D1000A073C1 /* ChooseRoomView.swift in Sources */,
+				371FD3702B242D0F00A073C1 /* RadioButtonView.swift in Sources */,
 				371FD3612B22FFE100A073C1 /* ContentView.swift in Sources */,
+				371FD3832B26B83F00A073C1 /* ChildrenlistViewModel.swift in Sources */,
+				371FD3722B24690200A073C1 /* childrenlist.swift in Sources */,
 				371FD35F2B22FFE100A073C1 /* RecurringBookingApp.swift in Sources */,
+				371FD3852B26BCE800A073C1 /* ChildrenListResource.swift in Sources */,
+				371FD3762B2481B200A073C1 /* Choosechildren.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
