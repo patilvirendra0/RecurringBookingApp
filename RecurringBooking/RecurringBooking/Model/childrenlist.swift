@@ -6,8 +6,16 @@
 //
 
 import Foundation
-// MARK: - Welcome
+
+// MARK: - ChildrenList
 struct ChildrenList: Codable {
+    let data: DataClass
+    let id, displayName: String
+    let version: Int
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
     let children: [Child]
 }
 

@@ -19,10 +19,9 @@ struct RadioButtonView: View {
         Button(action: {
             selectedIndex = index
             isOPenchild = false
-            print(selectedIndex)
         }) {
-        
-        HStack {
+            
+            HStack {
                 Image(systemName: selectedIndex == index ? "largecircle.fill.circle" : "circle")
                     .foregroundColor(.black)
                 Text("\(name)").fontWeight(.regular).foregroundStyle(.black)
@@ -31,6 +30,3 @@ struct RadioButtonView: View {
     }
 }
 
-//#Preview {
-//    RadioButtonView(index: index, selectedIndex: selectedIndex, name: name)
-//}
