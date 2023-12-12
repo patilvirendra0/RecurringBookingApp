@@ -11,27 +11,41 @@ struct Choosechildren: View {
         
     @State var selectedOption: Int = 1
     @Binding var isOPenchild : Bool
+    @Binding var isOPenchooseroom : Bool
 
     @ObservedObject var childlistViewModel = ChildrenlistViewModel()
-   
     @ObservedObject var roomlistViewModel = RoomlistViewModel()
     
     var body: some View {
         
         if isOPenchild {
-            
             VStack {
                 HStack{
                     Text("Who's going?").font(.headline).padding(EdgeInsets(top: 20, leading: 20, bottom: 10, trailing: 0))
                     Spacer()
                 }
-
                 VStack{
                     HStack {
                         List{
                             ForEach(childlistViewModel.childata.indices, id: \.self) { index in
-                                RadioButtonView(index: index, selectedIndex: $selectedOption, name: childlistViewModel.childata[index].fullName, isOPenchild: $isOPenchild)
-                                    .listRowSeparator(.hidden)
+                                Button(action: {
+                                    
+                                    selectedOption = index
+                                    //childlistViewModel.selectedchildrenIndex = selectedOption
+                                    APIUtility.availbleroomID = childlistViewModel.childata[index].availableRoomsID
+                                    isOPenchild = false
+                                    isOPenchooseroom = true
+                                    
+                                    roomlistViewModel.bookingRooms = []
+                                    roomlistViewModel.getroomListData()
+                         
+                                }) {
+                                    HStack {
+                                        Image(systemName: selectedOption == index ? "largecircle.fill.circle" : "circle")
+                                            .foregroundColor(.black)
+                                        Text("\(childlistViewModel.childata[index].fullName)").fontWeight(.regular).foregroundStyle(.black)
+                                    }
+                                }.listRowSeparator(.hidden)
                             }
                         }.listStyle(.plain)
                     }
@@ -41,14 +55,13 @@ struct Choosechildren: View {
                 .onAppear() {
                     childlistViewModel.getchildrenList()
                 }
-
         } else {
 
             //Choose a rooom
             HStack {
                 Text("Who").padding()
                  Spacer()
-                Button(childlistViewModel.childata[selectedOption].fullName) {
+                Button(childlistViewModel.childata.count != 0 ?childlistViewModel.childata[selectedOption].fullName : "-") {
                     isOPenchild = true
                 }
                 .foregroundStyle(.black)

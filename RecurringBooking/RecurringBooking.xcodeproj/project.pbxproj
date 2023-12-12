@@ -11,7 +11,6 @@
 		371FD3612B22FFE100A073C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3602B22FFE100A073C1 /* ContentView.swift */; };
 		371FD3632B22FFE300A073C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371FD3622B22FFE300A073C1 /* Assets.xcassets */; };
 		371FD3662B22FFE300A073C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371FD3652B22FFE300A073C1 /* Preview Assets.xcassets */; };
-		371FD3702B242D0F00A073C1 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */; };
 		371FD3722B24690200A073C1 /* ChildrenlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3712B24690200A073C1 /* ChildrenlistModel.swift */; };
 		371FD3742B247D1000A073C1 /* ChooseRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3732B247D1000A073C1 /* ChooseRoomView.swift */; };
 		371FD3762B2481B200A073C1 /* Choosechildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3752B2481B200A073C1 /* Choosechildren.swift */; };
@@ -32,7 +31,6 @@
 		371FD3602B22FFE100A073C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		371FD3622B22FFE300A073C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371FD3652B22FFE300A073C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		371FD3712B24690200A073C1 /* ChildrenlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenlistModel.swift; sourceTree = "<group>"; };
 		371FD3732B247D1000A073C1 /* ChooseRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoomView.swift; sourceTree = "<group>"; };
 		371FD3752B2481B200A073C1 /* Choosechildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choosechildren.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		371FD36E2B242C9E00A073C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				371FD36F2B242D0F00A073C1 /* RadioButtonView.swift */,
 				371FD3732B247D1000A073C1 /* ChooseRoomView.swift */,
 				371FD3752B2481B200A073C1 /* Choosechildren.swift */,
 				371FD3792B2631EA00A073C1 /* ReviewbookingView.swift */,
@@ -222,7 +219,6 @@
 				371FD37A2B2631EA00A073C1 /* ReviewbookingView.swift in Sources */,
 				371FD3742B247D1000A073C1 /* ChooseRoomView.swift in Sources */,
 				378812362B2822370018FD9D /* Utilityextension.swift in Sources */,
-				371FD3702B242D0F00A073C1 /* RadioButtonView.swift in Sources */,
 				371FD3612B22FFE100A073C1 /* ContentView.swift in Sources */,
 				371FD3832B26B83F00A073C1 /* ChildrenlistViewModel.swift in Sources */,
 				371FD3722B24690200A073C1 /* ChildrenlistModel.swift in Sources */,

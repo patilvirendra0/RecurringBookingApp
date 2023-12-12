@@ -8,18 +8,20 @@
 import Foundation
 
 
-struct ChildrenDataModel{
-    
-    var selectedchildrenIndex : Int = 0
-    var getusername: String = String()
-    var getavailbleroomID: String = String()
-}
+//struct ChildrenDataModel{
+//    
+//    var selectedchildrenIndex : Int = 0
+//    var getusername: String = String()
+//    var getavailbleroomID: String = String()
+//}
 
 class ChildrenlistViewModel : ObservableObject {
     
     private let childrenListResource: ChildrenListResource = ChildrenListResource()
-
-    @Published var childata: [Child] = []
+    
+    var getavailbleroomID: String = String()
+    
+    @Published var childata = [Child]()
     
     //Call the api
     func getchildrenList() {

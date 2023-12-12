@@ -13,17 +13,11 @@ struct ContentView: View {
     @State var isOPenchooseroom : Bool = false
     
     @State private var startDate = Date.now
-    
     @State private var endDate = Date.now
     
     @State private var buttonDisabled = false
-    
     let choosedays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-    
     @State var weekDays = [String?]()
-    
-//    @ObservedObject var roomlistViewModel = RoomlistViewModel()
-
     
     var dateformater : DateFormatter {
         let formatter = DateFormatter()
@@ -56,8 +50,8 @@ struct ContentView: View {
                     ScrollView{
                         
                         //set the Choose room Data
-                        Choosechildren(isOPenchild: $isOPenchild)
-                        
+                        Choosechildren(isOPenchild: $isOPenchild, isOPenchooseroom: $isOPenchooseroom)
+
                         //set the Choose room Data
                         ChooseRoomView(isOPenchooseroom: $isOPenchooseroom).padding(.top,10)
                         
