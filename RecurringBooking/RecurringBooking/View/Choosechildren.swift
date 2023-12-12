@@ -12,9 +12,16 @@ struct Choosechildren: View {
     @State var selectedOption: Int = 1
     @Binding var isOPenchild : Bool
     @Binding var isOPenchooseroom : Bool
+    @Binding var seletedChildrenfullname : String
+    @Binding var selectedavailableRoomsId : String
+    @Binding var childfkey : String
+
 
     @ObservedObject var childlistViewModel = ChildrenlistViewModel()
+    
     @ObservedObject var roomlistViewModel = RoomlistViewModel()
+    
+    var selecteddatamodel = SelectedDataModel()
     
     var body: some View {
         
@@ -30,11 +37,13 @@ struct Choosechildren: View {
                             ForEach(childlistViewModel.childata.indices, id: \.self) { index in
                                 Button(action: {
                                     
-                                    selectedOption = index
-                                    //childlistViewModel.selectedchildrenIndex = selectedOption
-                                    APIUtility.availbleroomID = childlistViewModel.childata[index].availableRoomsID
                                     isOPenchild = false
                                     isOPenchooseroom = true
+                                    selectedOption = index
+                                    APIUtility.availbleroomID = childlistViewModel.childata[index].availableRoomsID
+                                    seletedChildrenfullname = childlistViewModel.childata[index].fullName
+                                    selectedavailableRoomsId = childlistViewModel.childata[index].availableRoomsID
+                                    childfkey = childlistViewModel.childata[index].fkey
                                     
                                     roomlistViewModel.bookingRooms = []
                                     roomlistViewModel.getroomListData()
@@ -61,7 +70,7 @@ struct Choosechildren: View {
             HStack {
                 Text("Who").padding()
                  Spacer()
-                Button(childlistViewModel.childata.count != 0 ?childlistViewModel.childata[selectedOption].fullName : "-") {
+                Button(seletedChildrenfullname) {
                     isOPenchild = true
                 }
                 .foregroundStyle(.black)
@@ -75,5 +84,5 @@ struct Choosechildren: View {
 }
 
 //#Preview {
-//    Choosechildren()
+//    Choosechildren(isOPenchild: .constant(false), isOPenchooseroom: .constant(false), SeletedChildrenfullname: .constant(false))
 //}

@@ -13,6 +13,12 @@ struct ChooseRoomView: View {
     
     @State  var selectedchooseroom : Int = 1
     @Binding var isOPenchooseroom : Bool
+    
+    @Binding var feefkey : String
+    @Binding var roomfkey : String
+    
+    @State var selectedroomname : String
+
     @ObservedObject var roomlistViewModel = RoomlistViewModel()
     
     var body: some View {
@@ -33,6 +39,13 @@ struct ChooseRoomView: View {
                                 Button(action: {
                                     selectedchooseroom = index
                                     isOPenchooseroom = false
+                                    
+                                    //Set the date in
+                                    feefkey = roomlistViewModel.bookingRooms[index].feeFkey
+                                    roomfkey = roomlistViewModel.bookingRooms[index].roomFkey
+                                    selectedroomname = "\(roomlistViewModel.bookingRooms[index].roomName + " - " +   "\(String(describing: roomlistViewModel.convertedamtopm(timeString: roomlistViewModel.bookingRooms[index].startTime)!))" + " - " + "\(String(describing: roomlistViewModel.convertedamtopm(timeString: roomlistViewModel.bookingRooms[index].endTime)!))")"
+                                    
+                                    
                                 }) {
                                     HStack {
                                         
@@ -43,8 +56,8 @@ struct ChooseRoomView: View {
                                             .font(.system(size: 14, weight: .regular, design: .default))
                                     }
                                 }.listRowSeparator(.hidden)
-                            }.id(UUID())
-                        }
+                            }
+                        }.id(UUID())
                         .listStyle(.plain)
                     }
                 }.frame(height: CGFloat(roomlistViewModel.bookingRooms.count) * 45 + 10 )
@@ -61,8 +74,7 @@ struct ChooseRoomView: View {
                 
                 Text("Where").padding()
                 Spacer()
-                Button((roomlistViewModel.bookingRooms.count != 0 ? roomlistViewModel.bookingRooms[selectedchooseroom].roomName + " - " +   "\(String(describing: roomlistViewModel.convertedamtopm(timeString: roomlistViewModel.bookingRooms[selectedchooseroom].startTime)!))" + " - " + "\(String(describing: roomlistViewModel.convertedamtopm(timeString: roomlistViewModel.bookingRooms[selectedchooseroom].endTime)!))"
-                        : "Choose a room")) {
+                Button(selectedroomname) {
                     isOPenchooseroom = true
                 }
                 .foregroundStyle(.black)

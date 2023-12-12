@@ -10,13 +10,13 @@ import Foundation
 // MARK: - Welcome
 struct RoomlistModel: Codable {
     
-    let data : Data
+    let data : RoomData
     let id, displayName: String
     let version: Int
 }
 
 // MARK: - DataClass
-struct Data: Codable {
+struct RoomData: Codable {
     let bookingRooms: [BookingRoom]
 }
 

@@ -11,7 +11,6 @@ class RoomlistViewModel : ObservableObject {
     
      private let roomListresource: RoomListResource = RoomListResource()
   
-//     @Published var roomlistModel: RoomlistModel?
      @Published var bookingRooms: [BookingRoom] = []
 
     //Call the api
@@ -21,7 +20,7 @@ class RoomlistViewModel : ObservableObject {
             DispatchQueue.main.async {
                 if(response != nil){
                     
-                    //self.roomlistModel = response.self
+                    self.bookingRooms = []
                     self.bookingRooms = (response?.data.bookingRooms)!
                     print("Get Room List --->\(response.debugDescription)")
                 }
