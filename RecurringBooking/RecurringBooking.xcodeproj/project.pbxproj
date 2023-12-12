@@ -23,6 +23,7 @@
 		371FD38A2B27112500A073C1 /* RoomListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD3892B27112500A073C1 /* RoomListResource.swift */; };
 		371FD38C2B27157600A073C1 /* APIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD38B2B27157600A073C1 /* APIUtility.swift */; };
 		371FD38E2B27162300A073C1 /* RoomListmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FD38D2B27162300A073C1 /* RoomListmodel.swift */; };
+		378812362B2822370018FD9D /* Utilityextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378812352B2822370018FD9D /* Utilityextension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		371FD3892B27112500A073C1 /* RoomListResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListResource.swift; sourceTree = "<group>"; };
 		371FD38B2B27157600A073C1 /* APIUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUtility.swift; sourceTree = "<group>"; };
 		371FD38D2B27162300A073C1 /* RoomListmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListmodel.swift; sourceTree = "<group>"; };
+		378812352B2822370018FD9D /* Utilityextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilityextension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				371FD37F2B26B7D100A073C1 /* HttpUtility.swift */,
 				371FD38B2B27157600A073C1 /* APIUtility.swift */,
+				378812352B2822370018FD9D /* Utilityextension.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				371FD38E2B27162300A073C1 /* RoomListmodel.swift in Sources */,
 				371FD37A2B2631EA00A073C1 /* ReviewbookingView.swift in Sources */,
 				371FD3742B247D1000A073C1 /* ChooseRoomView.swift in Sources */,
+				378812362B2822370018FD9D /* Utilityextension.swift in Sources */,
 				371FD3702B242D0F00A073C1 /* RadioButtonView.swift in Sources */,
 				371FD3612B22FFE100A073C1 /* ContentView.swift in Sources */,
 				371FD3832B26B83F00A073C1 /* ChildrenlistViewModel.swift in Sources */,

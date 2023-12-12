@@ -19,10 +19,12 @@ struct RadioButtonView: View {
     var body: some View {
         
         Button(action: {
+            
             selectedIndex = index
+//            childrenDataModel.selectedchildrenIndex = selectedIndex
             isOPenchild = false
             roomlistViewModel.getroomListData()
-
+ 
         }) {
             HStack {
                 Image(systemName: selectedIndex == index ? "largecircle.fill.circle" : "circle")

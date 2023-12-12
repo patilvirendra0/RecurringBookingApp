@@ -11,8 +11,6 @@ import SwiftUI
 
 struct ChooseRoomView: View {
     
-    var chooseroomdata = ["Before School care - 5am - 8:30am","holiday Program - 9am - 3pm","Before School care - 5am - 8:30am","holiday Program - 9am - 3pm","Before School care - 5am - 8:30am"]
-
     @State  var selectedchooseroom : Int = 1
 
     @Binding var isOPenchooseroom : Bool
@@ -33,17 +31,17 @@ struct ChooseRoomView: View {
                     HStack {
                         List{
                             
-                            ForEach(chooseroomdata.indices, id: \.self) { index in
+                            ForEach(roomlistViewModel.bookingRooms.indices, id: \.self) { index in
                                 
-                                ChooseroomRadiobutton(index: index, selectedIndex: $selectedchooseroom, name: chooseroomdata[index], isOPenchild: $isOPenchooseroom)
+                                ChooseroomRadiobutton(index: index, selectedIndex: $selectedchooseroom, name: roomlistViewModel.bookingRooms[index].roomName + " - " + roomlistViewModel.bookingRooms[index].startTime + " - " + roomlistViewModel.bookingRooms[index].endTime  , isOPenchild: $isOPenchooseroom)
                                     .listRowSeparator(.hidden)
                             }
                         }.listStyle(.plain)
                     }
-                }.frame(height: CGFloat(chooseroomdata.count) * 45 + 10 )
+                }.frame(height: CGFloat(roomlistViewModel.bookingRooms.count) * 45 + 10 )
             }.border(Color.black, width: 1.5).onAppear() {
                 
-                  //roomlistViewModel.getroomListData()
+                  roomlistViewModel.getroomListData()
             }
             
         } else {
@@ -52,10 +50,12 @@ struct ChooseRoomView: View {
             HStack {
                 Text("Where").padding()
                 Spacer()
-                Button("Before School care - 5am - 8:30am") {
+                Button((roomlistViewModel.roomlistModel?.data.bookingRooms[selectedchooseroom].roomName ?? "Choose a room")) {
                     isOPenchooseroom = true
                 }
-                .fontWeight(.bold).foregroundStyle(.black)
+                .foregroundStyle(.black)
+                .font(.system(size: 15, weight: .semibold, design: .default))
+
                 .cornerRadius(0)
                 .padding()
                 
@@ -78,13 +78,14 @@ struct ChooseroomRadiobutton: View {
         Button(action: {
             selectedIndex = index
             isOPenchild = false
-            roomlistViewModel.getroomListData()
 
         }) {
             HStack {
                 Image(systemName: selectedIndex == index ? "largecircle.fill.circle" : "circle")
                     .foregroundColor(.black)
-                Text("\(name)").fontWeight(.regular).foregroundStyle(.black)
+                Text("\(name)")
+                    .foregroundStyle(.black)
+                    .font(.system(size: 14, weight: .regular, design: .default))
             }
         }
     }

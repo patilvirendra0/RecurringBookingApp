@@ -9,10 +9,12 @@ import SwiftUI
 
 struct Choosechildren: View {
         
-    @State  var selectedOption: Int = 1
+    @State var selectedOption: Int = 1
     @Binding var isOPenchild : Bool
-    
+
     @ObservedObject var childlistViewModel = ChildrenlistViewModel()
+   
+    @ObservedObject var roomlistViewModel = RoomlistViewModel()
     
     var body: some View {
         
@@ -45,11 +47,12 @@ struct Choosechildren: View {
             //Choose a rooom
             HStack {
                 Text("Who").padding()
-                Spacer()
-                 Button(childlistViewModel.childata[selectedOption].fullName) {
+                 Spacer()
+                Button(childlistViewModel.childata[selectedOption].fullName) {
                     isOPenchild = true
                 }
-                .fontWeight(.bold).foregroundStyle(.black)
+                .foregroundStyle(.black)
+                .font(.system(size: 15, weight: .semibold, design: .default))
                 .cornerRadius(0)
                 .padding()
                 

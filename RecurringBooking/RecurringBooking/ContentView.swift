@@ -20,7 +20,10 @@ struct ContentView: View {
     
     let choosedays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     
-    @State var task = [String?]()
+    @State var weekDays = [String?]()
+    
+//    @ObservedObject var roomlistViewModel = RoomlistViewModel()
+
     
     var dateformater : DateFormatter {
         let formatter = DateFormatter()
@@ -112,7 +115,7 @@ struct ContentView: View {
                                 
                                 ForEach(choosedays.indices, id: \.self) { index in
                                     
-                                    if task.contains(choosedays[index]){
+                                    if weekDays.contains(choosedays[index]){
                                         Divider().frame(height: 40)
                                             .overlay(.black)
                                         HStack(){
@@ -125,9 +128,9 @@ struct ContentView: View {
                                         }
                                         .onTapGesture(perform:{
                                             
-                                            if let firstIndex = task.firstIndex(where: {$0 == choosedays[index]}) {
+                                            if let firstIndex = weekDays.firstIndex(where: {$0 == choosedays[index]}) {
                                                 print("Found at index: \(firstIndex)")
-                                                task.remove(at: firstIndex)
+                                                weekDays.remove(at: firstIndex)
                                             }
                                         }).background(Color.red)
                                         
@@ -142,7 +145,7 @@ struct ContentView: View {
                                             
                                         }.frame(height: 40)
                                             .onTapGesture(perform:{
-                                                task.append(choosedays[index])
+                                                weekDays.append(choosedays[index])
                                             })
                                     }
                                 }

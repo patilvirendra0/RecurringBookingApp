@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2ED12AA5-542B-4657-85EA-0699C6A0BCE2"
+            uuid = "4CEAD47B-14F6-4D84-9658-56CD4E19415E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecurringBooking/APIManager/HttpUtility.swift"
+            filePath = "RecurringBooking/Resource/RoomListResource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getData(request:resultType:completionHandler:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getroomlistapirespnce(completionHandler:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4CEAD47B-14F6-4D84-9658-56CD4E19415E - e7fb0806392d8575"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecurringBooking.RoomListResource.getroomlistapirespnce(completionHandler: (Swift.Optional&lt;RecurringBooking.RoomlistModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "RecurringBooking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virendrapatil/Desktop/RecurringBookingApp/RecurringBooking/RecurringBooking/Resource/RoomListResource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "4CEAD47B-14F6-4D84-9658-56CD4E19415E - 8014697af91c9ad8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;RecurringBooking.RoomlistModel&gt;) -&gt; () in RecurringBooking.RoomListResource.getroomlistapirespnce(completionHandler: (Swift.Optional&lt;RecurringBooking.RoomlistModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "RecurringBooking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virendrapatil/Desktop/RecurringBookingApp/RecurringBooking/RecurringBooking/Resource/RoomListResource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
