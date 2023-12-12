@@ -21,7 +21,7 @@ class RoomlistViewModel : ObservableObject {
                 if(response != nil){
                     
                     self.roomlistModel = response.self
-                    //print("Get Room List --->\(response.debugDescription)")
+                    print("Get Room List --->\(response.debugDescription)")
                 }
             }
         }

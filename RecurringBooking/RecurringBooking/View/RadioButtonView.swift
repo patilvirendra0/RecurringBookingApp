@@ -14,14 +14,14 @@ struct RadioButtonView: View {
     @State var name : String
     @Binding var isOPenchild : Bool
 
-    //@ObservedObject var roomlistViewModel = RoomlistViewModel()
+    @ObservedObject var roomlistViewModel = RoomlistViewModel()
         
     var body: some View {
         
         Button(action: {
             selectedIndex = index
             isOPenchild = false
-            //roomlistViewModel.getroomListData()
+            roomlistViewModel.getroomListData()
 
         }) {
             HStack {

@@ -54,12 +54,13 @@ struct ContentView: View {
                         
                         //set the Choose room Data
                         Choosechildren(isOPenchild: $isOPenchild)
+                        
                         //set the Choose room Data
                         ChooseRoomView(isOPenchooseroom: $isOPenchooseroom).padding(.top,10)
                         
-                        VStack (spacing: 0) {
+                        VStack  {
                             
-                            HStack (spacing: 10) {
+                            HStack (spacing: 5) {
                                 
                                 VStack {
                                     
@@ -71,27 +72,28 @@ struct ContentView: View {
                                     HStack {
                                         DatePicker(selection: $startDate,in: Date.now..., displayedComponents: .date) {
                                             Label("",systemImage: "calendar")
-                                        }.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
+                                        }.padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 10))
+                                        
                                     }.border(Color.gray, width: 1)
                                 }
                                 
                                 VStack{
-                                    
+
                                     HStack{
                                         Text("End Date").font(.headline).padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                                         Spacer()
                                     }
-                                    
+
                                     HStack {
-                                        
                                         DatePicker(selection: $endDate,in: startDate..., displayedComponents: .date) {
                                             Label("",systemImage: "calendar")
-                                        }.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
+                                        }.padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 10))
                                         
                                     }.border(Color.gray, width: 1)
                                 }
-
-                            }.frame(minWidth: 0, maxWidth: .infinity).background(Color.clear)
+                            }.background(Color.clear)
+                            
+                            
                             
                         }.padding(.top,15)
                         
@@ -104,6 +106,7 @@ struct ContentView: View {
                                     .fontWeight(.bold)
                                 Spacer()
                             }
+                            
                             
                             HStack {
                                 
@@ -126,7 +129,7 @@ struct ContentView: View {
                                                 print("Found at index: \(firstIndex)")
                                                 task.remove(at: firstIndex)
                                             }
-                                        }).background(Color.black)
+                                        }).background(Color.red)
                                         
                                     } else {
                                         
@@ -143,35 +146,41 @@ struct ContentView: View {
                                             })
                                     }
                                 }
-                            }.border(Color.gray)
-                        }.padding(.top ,10)
+                            }.border(Color.gray).frame(minWidth: 0,maxWidth: .infinity)
+                            
+                        }.padding(.top,10)
                     }
                     
+                }.padding()
+                
+                HStack{
                     //Review Booking Button
                     Button(action: {
                         print("Delete tapped!")
                         buttonDisabled = true
-                        
                     }) {
-                        
                         NavigationLink(destination: ReviewbookingView()) {
-
                             HStack {
                                 Text("Review Booking")
                                     .fontWeight(.regular)
                                     .font(.title2).padding()
                             }
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(buttonDisabled ? Color.accentColor : Color.gray )
+                            .background(buttonDisabled ? Color.indigo : Color.gray )
                             .foregroundColor(.white)
                             .cornerRadius(8)
+                            .navigationBarBackButtonHidden(true)
                             
-                        }.padding().disabled(buttonDisabled)
-                        
-                    }
-                }.padding()
+                        }
+                        .disabled(buttonDisabled)
+                        .navigationBarHidden(true)
+                        .padding()
+                    }.frame(height : 15)
+                    
+                }.frame(height : 20).padding(.bottom ,10)
+
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     func exampleDate(){

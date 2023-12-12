@@ -11,7 +11,7 @@ struct RoomListResource {
     
     func getroomlistapirespnce(completionHandler:@escaping(_ result: RoomlistModel?)->Void) {
 
-        var urlRequest = URLRequest(url: URL(string: APIUtility.baseUrl + "/300b59af-4ec9-4b0b-8213-5ea5cd114a9f")!)
+        var urlRequest = URLRequest(url: URL(string: APIUtility.roomlistAPI)!)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue(APIUtility.getacesstoken, forHTTPHeaderField: "x-collection-access-token")
 
