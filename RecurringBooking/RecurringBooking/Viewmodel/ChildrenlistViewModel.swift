@@ -16,12 +16,11 @@ class ChildrenlistViewModel : ObservableObject {
     var getavailbleroomID: String = String()
         
     @Published var childata: [Child] = []
-
-    
+        
     //Call the api
     func getchildrenList() {
         
-        childrenListResource.authenticate() { response in
+        childrenListResource.getchildrenlistresponce() { response in
 
             DispatchQueue.main.async {
                  if(response != nil){

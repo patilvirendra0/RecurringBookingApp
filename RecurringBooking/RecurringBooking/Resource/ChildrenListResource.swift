@@ -10,7 +10,7 @@ import Foundation
 
 struct ChildrenListResource {
 
-    func authenticate(completionHandler:@escaping(_ result: ChildrenlistModel?)->Void) {
+    func getchildrenlistresponce(completionHandler:@escaping(_ result: ChildrenlistModel?)->Void) {
 
         var urlRequest = URLRequest(url: URL(string: APIUtility.childrenListAPI)!)
         urlRequest.httpMethod = "GET"

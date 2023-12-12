@@ -37,7 +37,8 @@ struct ChooseDayView: View {
                             if let firstIndex = weekDays.firstIndex(where: {$0 == choosedays[index]}) {
                                 weekDays.remove(at: firstIndex)
                             }
-                        }).background(Color.red)
+                        })
+                        
                     } else {
                         Divider().frame(height: 40)
                             .overlay(.black)

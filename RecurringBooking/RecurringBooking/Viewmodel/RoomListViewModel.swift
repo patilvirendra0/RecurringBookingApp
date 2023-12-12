@@ -16,13 +16,23 @@ class RoomlistViewModel : ObservableObject {
     //Call the api
     func getroomListData() {
         
-        roomListresource.getroomlistapirespnce() { response in
+        roomListresource.getroomlistapiresponse() { response in
             DispatchQueue.main.async {
                 if(response != nil){
                     
                     self.bookingRooms = []
                     self.bookingRooms = (response?.data.bookingRooms)!
-                    print("Get Room List --->\(response.debugDescription)")
+                }
+            }
+        }
+    }
+    
+    func createbookingrequest(jsondata : [String : Any]){
+
+        roomListresource.createbookingrequest(jsondata: jsondata) { response in
+            DispatchQueue.main.async {
+                if(response != nil){
+                    
                 }
             }
         }

@@ -18,10 +18,7 @@ struct Choosechildren: View {
 
 
     @ObservedObject var childlistViewModel = ChildrenlistViewModel()
-    
     @ObservedObject var roomlistViewModel = RoomlistViewModel()
-    
-    var selecteddatamodel = SelectedDataModel()
     
     var body: some View {
         

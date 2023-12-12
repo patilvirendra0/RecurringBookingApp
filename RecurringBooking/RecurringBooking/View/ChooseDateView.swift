@@ -12,6 +12,23 @@ struct ChooseDateView: View {
     @State private var startDate = Date.now
     @State private var endDate = Date.now
     
+    @State private var showPicker: Bool = false
+
+    @State private var selectedDateText: String = "Date"
+
+//    private var selectedDate: Binding<Date> {
+//      Binding<Date>(get: { startDate}, set : {
+//          self.startDate = $0
+//          self.setDateString()
+//      })
+//    }
+    
+//    private func setDateString() {
+//      let formatter = DateFormatter()
+//      formatter.dateFormat = "dd/MM/yyyy"
+//      self.selectedDateText = formatter.string(from: startDate)
+//    }
+    
     var body: some View {
         
         VStack  {
@@ -24,9 +41,7 @@ struct ChooseDateView: View {
                     HStack {
                         DatePicker(selection: $startDate,in: Date.now..., displayedComponents: .date) {
                             Label("",systemImage: "calendar")
-                        }.padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 10)).onTapGesture {
-                           print("Selected Date -->")
-                        }
+                        }.padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 10))
                     }.border(Color.gray, width: 1)
                 }
 
