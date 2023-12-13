@@ -62,11 +62,13 @@ struct ContentView: View {
                 }.padding()
                 
                 HStack{
+                    
                     //Review Booking Button
                     Button(action: {
+
                          
                     }) {
-                        NavigationLink(destination: ReviewbookingView()) {
+                        NavigationLink(destination: ReviewbookingView(childrenname: seletedChildrenfullname)) {
                             HStack {
                                 Text("Review Booking")
                                     .fontWeight(.regular)
@@ -76,15 +78,15 @@ struct ContentView: View {
                             .background(isbuttonEnable()! ? Color.gray : Color.indigo )
                             .foregroundColor(.white)
                             .cornerRadius(8)
-                            .navigationBarBackButtonHidden(true).onTapGesture {
-                                
-                                let jsonData  = ["childFkey" : childfkey, "startDate" : "20-12-2024" , "endDate" : "20-12-2024", "feeFkey": feefkey , "roomFkey": roomfkey ,"daysAWeek" : weekDays ] as [String : Any]
-                                
-                                if isbuttonEnable()! {
-                                } else {
-                                    roomlistViewModel.createbookingrequest(jsondata: jsonData)
-                                }
-                            }
+                            .navigationBarBackButtonHidden(true)
+//                            .onTapGesture {
+//                                
+////                                let jsonData  = ["childFkey" : childfkey, "startDate" : "20-12-2024" , "endDate" : "20-12-2024", "feeFkey": feefkey , "roomFkey": roomfkey ,"daysAWeek" : weekDays ] as [String : Any]
+////                                if isbuttonEnable()! {
+////                                } else {
+////                                    roomlistViewModel.createbookingrequest(jsondata: jsonData)
+////                                }
+//                            }
                         }
                         .disabled(isbuttonEnable()!)
                         .navigationBarHidden(true)

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ReviewbookingView: View {
     
+    @State var childrenname : String = ""
+    
+    
     var body: some View {
         
         VStack {
@@ -38,7 +41,7 @@ struct ReviewbookingView: View {
                     
                     Image(systemName: "person.crop.circle.fill").frame(width: 40,height: 40)
                     
-                    Text("jimmy jones").font(.title3).padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    Text(childrenname).font(.title3).padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                     Spacer()
                 }
             }.border(Color.gray, width: 1.5)
